@@ -6,8 +6,8 @@ from PRmodel import solve_PRmodel
 start_time = time.time()
 
 t_dur = 30e3      # [ms]
-g_c = 2.26        # [mS/cm^2] Weak
-I_stim = 1.35     # [uA/cm^2]
+g_c = 8.86        # [mS/cm^2]
+I_stim = 0.78     # [uA/cm^2]
 stim_start = 10e3 # [ms]
 stim_end = 20e3   # [ms]
 
@@ -28,6 +28,6 @@ plt.ylabel('[mV]')
 plt.legend(loc='upper right')
 
 # save to file
-np.savez('data/figure3_PR_weak', t=t, Vs=Vs, Vd=Vd, Ca=Ca)
+np.savez('data/figure2_PR_strong', t=t, Vs=Vs, Vd=Vd, Ca=Ca)
 
 plt.show()

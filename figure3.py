@@ -1,19 +1,19 @@
 import numpy as np
 import time
 import matplotlib.pyplot as plt
-from brain_tissue_module.brain_tissue_module import *
-from functions.solve_brain_tissue_module import *
+from edNEGmodel.edNEGmodel import *
+from functions.solve_edNEGmodel import *
 from functions.print_final_values import *
 
 start_time = time.time()
 
-t_dur = 30      # [s]
+t_dur = 1400    # [s]
 alpha = 2
 I_stim = 36e-12 # [A]
-stim_start = 10 # [s]
-stim_end = 20   # [s]
+stim_start = 1  # [s]
+stim_end = 600  # [s]
 
-sol, my_cell = solve_brain_tissue_module(t_dur, alpha, I_stim, stim_start, stim_end)
+sol, my_cell = solve_edNEGmodel(t_dur, alpha, I_stim, stim_start, stim_end)
 
 t = sol.t
 
@@ -33,7 +33,7 @@ plt.ylabel('[mV]')
 plt.legend(loc='upper right')
 
 # save to file
-np.savez('data/figure3_BTM_strong', t=t, phi_sn=phi_sn, phi_se=phi_se, phi_dn=phi_dn, phi_de=phi_de, phi_sg=phi_sg, phi_dg=phi_dg, \
+np.savez('data/figure3', t=t, phi_sn=phi_sn, phi_se=phi_se, phi_dn=phi_dn, phi_de=phi_de, phi_sg=phi_sg, phi_dg=phi_dg, \
     phi_msn=phi_msn, phi_mdn=phi_mdn, phi_msg=phi_msg, phi_mdg=phi_mdg, \
     E_Na_sn=E_Na_sn, E_Na_dn=E_Na_dn, E_Na_sg=E_Na_sg, E_Na_dg=E_Na_dg, \
     E_K_sn=E_K_sn, E_K_dn=E_K_dn, E_K_sg=E_K_sg, E_K_dg=E_K_dg, \
