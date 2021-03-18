@@ -1,6 +1,6 @@
-# An electrodiffusive neuron-extracellular-glia model with somatodendritic interactions
+# An electrodiffusive neuron-extracellular-glia model for exploring the genesis of slow potentials in the brain 
 
-This code was used to produce the results presented in Sætra et al. 202X: [..].
+This code was used to produce the results presented in Sætra et al. 202X: 
 
 # Installation
 
