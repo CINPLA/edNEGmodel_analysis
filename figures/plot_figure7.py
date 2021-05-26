@@ -106,12 +106,18 @@ for ax in [ax1, ax2, ax3, ax4, ax5, ax6]:
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
 
-ax4.set_xlim(60,200)
-ax5.set_xlim(50,190)
-ax6.set_xlim(30,100)
-ax4.set_xticks([80,140,200])
-ax5.set_xticks([70,130,190])
-ax6.set_xticks([40,70,100])
+ax4.set_xlim(300,1000)
+ax5.set_xlim(400,1100)
+ax6.set_xlim(150,500)
+t4 = [300,500,700,900]
+ax4.set_xticks(t4)
+ax4.set_xticklabels(t4, rotation=30)
+t5 = [400,600,800,1000]
+ax5.set_xticks(t5)
+ax5.set_xticklabels(t5, rotation=30)
+t6 = [200, 300, 400, 500]
+ax6.set_xticks(t6)
+ax6.set_xticklabels(t6, rotation=30)
 
 ax1.set_ylabel(r'$\phi\mathrm{_{msn}}$ [mV]')
 ax2.set_ylabel(r'$\phi\mathrm{_{se,sum}}$ [mV]')

@@ -8,7 +8,7 @@ echo "Figure 4 done."
 
 echo "Creating data for Figure 5..."
 python3 figure5.py
-echo "Figure 4 and 5 done."
+echo "Figure 5 done."
 
 echo "Creating data for Figure 6..."
 python3 figure6_I_K.py
@@ -21,3 +21,11 @@ echo "Creating data for Figure 7..."
 python3 figure7_I.py
 python3 figure7_II.py
 echo "Figure 7 done."
+
+echo "Creating data for Figure S1..."
+python3 figureS1.py
+echo "Figure S1 done."
+
+echo "Creating data for Figure S2..."
+python3 figureS2.py
+echo "Figure S2 done."
