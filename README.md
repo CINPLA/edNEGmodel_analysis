@@ -1,13 +1,15 @@
 # An electrodiffusive neuron-extracellular-glia model for exploring the genesis of slow potentials in the brain 
 
-This code was used to produce the results presented in Sætra et al. 202X: 
+This code was used to produce the results presented in Sætra et al., *PLoS Computational Biology*, 17(7), e1008143 (2021): 
+[An electrodiffusive neuron-extracellular-glia model for exploring
+the genesis of slow potentials in the brain](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008143). 
 
 # Installation
 
 To install the code, clone or download the repo, navigate to the top directory of the repo and enter the following command
 in the terminal: 
 ```bash
-python setup.py install
+python3 setup.py install
 ```
 
 You must have edNEGmodel installed, which can be downloaded from 
