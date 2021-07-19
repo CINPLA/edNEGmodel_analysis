@@ -13,7 +13,7 @@ syn_protocol = 'syn_soma'
 dendritic_synapse = False 
 t_dur = 60       # [s]
 k = 1
-for syn_rate in range(60, 121, 20):
+for syn_rate in range(300, 601, 100):
     sol, my_cell, spikes = solve_edNEGmodel(t_dur, alpha, syn_rate, syn_start, syn_end, syn_protocol)
 
     t = sol.t
@@ -42,7 +42,7 @@ for syn_rate in range(60, 121, 20):
 
 t_dur = 600       # [s]
 k = 1
-for syn_rate in range(140, 201, 20):
+for syn_rate in range(700, 1001, 100):
     sol, my_cell, spikes = solve_edNEGmodel(t_dur, alpha, syn_rate, syn_start, syn_end, syn_protocol)
 
     t = sol.t
@@ -74,7 +74,7 @@ syn_protocol = 'syn_dendrite'
 dendritic_synapse = True 
 t_dur = 60       # [s]
 k = 1
-for syn_rate in range(50, 111, 20):
+for syn_rate in range(400, 701, 100):
     sol, my_cell, spikes = solve_edNEGmodel(t_dur, alpha, syn_rate, syn_start, syn_end, syn_protocol)
 
     t = sol.t
@@ -103,7 +103,7 @@ for syn_rate in range(50, 111, 20):
 
 t_dur = 600       # [s]
 k = 1
-for syn_rate in range(130, 191, 20):
+for syn_rate in range(800, 1101, 100):
     sol, my_cell, spikes = solve_edNEGmodel(t_dur, alpha, syn_rate, syn_start, syn_end, syn_protocol)
 
     t = sol.t
@@ -135,7 +135,7 @@ syn_protocol = 'syn_both'
 dendritic_synapse = False 
 t_dur = 60       # [s]
 k = 1
-for syn_rate in range(30, 61, 10):
+for syn_rate in range(150, 301, 50):
     sol, my_cell, spikes = solve_edNEGmodel(t_dur, alpha, syn_rate, syn_start, syn_end, syn_protocol)
 
     t = sol.t
@@ -164,7 +164,7 @@ for syn_rate in range(30, 61, 10):
 
 t_dur = 600       # [s]
 k = 1
-for syn_rate in range(70, 101, 10):
+for syn_rate in range(350, 501, 50):
     sol, my_cell, spikes = solve_edNEGmodel(t_dur, alpha, syn_rate, syn_start, syn_end, syn_protocol)
 
     t = sol.t

@@ -1,28 +1,24 @@
 import numpy as np
 
-def g(t, t_s, phi):
+def g(t, t_s):
     """
     Calculate synaptic conductance.
     
     Arguments:
         t (float): time
         t_s (array): spike train
-        phi (float): membrane potential
 
     Returns: 
         G (float): synaptic conductance
     """
 
-    tau_1 = 80e-3       # [s]
-    tau_2 = 0.67e-3     # [s]
-    mu = 0.33           # [1/MM]
-    gamma = 0.06        # [1/mV] 
-    Mg = 1              # [mM]
-    
+    tau_1 = 3.0e-3       # [s]
+    tau_2 = 1.0e-3       # [s]
+
     condition = t_s <= t
     t_s = np.extract(condition, t_s)
 
-    G = (np.exp(-(t-t_s)/tau_1) - np.exp(-(t-t_s)/tau_2) ) / (1 + mu*Mg*np.exp(-gamma*phi*1e3))
+    G = np.exp(-(t-t_s)/tau_1) - np.exp(-(t-t_s)/tau_2)
     G = sum(G)
 
     return G
@@ -32,10 +28,10 @@ def activate_synapse(my_cell, t, t_s, phi, E_Na, E_K, E_Ca, dNadt_n, dNadt_e, dK
     Add synaptic currents to the edNEG model.
     """
 
-    g_bar = g(t, t_s, phi)
-    g_nmda_Na = 1e-9
-    g_nmda_K = 2.76e-10
-    g_nmda_Ca =4.4e-12
+    g_bar = g(t, t_s)
+    g_nmda_Na = 1.0e-9
+    g_nmda_K = 1.9e-9
+    g_nmda_Ca = 6.5e-12
 
     j_nmda_Na = g_nmda_Na * g_bar * (phi - E_Na) / (my_cell.F*my_cell.Z_Na)
     j_nmda_K = g_nmda_K * g_bar * (phi - E_K) / (my_cell.F*my_cell.Z_K)
@@ -55,10 +51,10 @@ def I_synapse(my_cell, t, t_s, phi, E_Na, E_K, E_Ca):
     Calculate the total synaptic current across the membrane.
     """
 
-    g_bar = g(t, t_s, phi)
-    g_nmda_Na = 1e-9
-    g_nmda_K = 2.76e-10
-    g_nmda_Ca =4.4e-12
+    g_bar = g(t, t_s)
+    g_nmda_Na = 1.0e-9
+    g_nmda_K = 1.9e-9
+    g_nmda_Ca = 6.5e-12
 
     j_nmda_Na = g_nmda_Na * g_bar * (phi - E_Na) / (my_cell.F*my_cell.Z_Na)
     j_nmda_K = g_nmda_K * g_bar * (phi- E_K) / (my_cell.F*my_cell.Z_K)
