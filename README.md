@@ -12,7 +12,7 @@ in the terminal:
 python3 setup.py install
 ```
 
-You must have edNEGmodel installed, which can be downloaded from 
+You must have edNEGmodel v1.0.0 installed, which can be downloaded from 
 [https://github.com/CINPLA/edNEGmodel](https://github.com/CINPLA/edNEGmodel).
 
 The code was run with Ubuntu 18.04.3 and Python 3.6.9.
